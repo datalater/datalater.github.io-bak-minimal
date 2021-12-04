@@ -30,20 +30,17 @@ export default {
 ```tsx
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
-import GlobalTheme from "./assets/theme";
+import theme from "./assets/theme";
 
 const Wrapper = styled.div`
-  width: 100px;
-  height: 100px;
-  background-color: ${({ theme }) =>
-    theme.colors.primary}; // import 없이 바로 theme을 사용한다
+  background-color: ${(props) => props.theme.colors.primary};
 `;
 
 const App = () => {
   return (
-    <ThemeProvider theme={GlobalTheme}>
+    <ThemeProvider theme={theme}>
       <Wrapper>
-        <App />
+        <h1>Hello, Theme</h1>
       </Wrapper>
     </ThemeProvider>
   );
@@ -55,7 +52,7 @@ export default App;
 
 그런데 `emotion`이 제공하는 `ThemeProvider`의 `theme` props에는 내가 정의한 property `colors`가 존재하지 않는다. 따라서 타입 오류가 발생한다:
 
-![error](https://user-images.githubusercontent.com/8105528/144628239-faf1e84a-26ec-49d0-8dab-23f4c81af527.png){: .shadow }
+![error](https://user-images.githubusercontent.com/8105528/144692954-51399743-dc54-4f3f-b79f-5032cf451a3f.png){: .shadow }
 _theme에서 타입 오류가 발생한다_
 
 ## 해결 방법
@@ -86,7 +83,7 @@ declare module "@emotion/react" {
 
 더 이상 타입 에러가 발생하지 않는다:
 
-![solved](https://user-images.githubusercontent.com/8105528/144628696-11d47cac-02a9-4ef8-8ac9-bf91dc1d8594.png){: .shadow }
+![solved](https://user-images.githubusercontent.com/8105528/144692997-3bc3b850-3868-41d4-82f7-3842c08a99c9.png){: .shadow }
 _타입 오류가 발생하지 않는다_
 
 ## See also
