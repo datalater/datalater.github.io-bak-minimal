@@ -93,7 +93,7 @@ declare module "@emotion/react" {
 
 자동완성이 가능하고, 더 이상 타입 에러가 발생하지 않는다:
 
-![solved](https://user-images.githubusercontent.com/8105528/144701151-61d75148-1f53-4a26-933c-f7f0aa3c7626.png){: .shadow }
+![solved](https://user-images.githubusercontent.com/8105528/144735578-f9fe3c47-4ebb-457d-8f14-5ef277a5c206.png){: .shadow }
 _자동완성을 지원한다_
 
 ![solved](https://user-images.githubusercontent.com/8105528/144692997-3bc3b850-3868-41d4-82f7-3842c08a99c9.png){: .shadow }
