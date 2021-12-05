@@ -1,5 +1,5 @@
 ---
-title: emotion theme 타입 지정하는 방법
+title: emotion theme 타입 지정하는 방법 (feat. 자동완성)
 date: 2021-12-04
 categories: [TIL]
 tags: [typescript] # TAG names should always be lowercase
@@ -15,7 +15,7 @@ image:
 프로젝트 내에서 공통으로 사용하는 스타일 값을 `theme` 모듈에 모아두고 사용하려고 한다. 이때 새 파일에서 `theme`에 있는 값을 사용하려면 `theme`을 `import` 해야 한다. 하지만  emotion의 `ThemeProvider`를 이용하면 `theme` 모듈 파일을 `import` 하지 않고도 해당 스타일 값을 사용할 수 있다.
 
 ```ts
-export default {
+const theme = {
   colors: {
     primary: "#ffb266",
     fontColor: "#4d5256",
@@ -24,6 +24,8 @@ export default {
     white: "#fff",
   },
 };
+
+export default theme;
 ```
 {: file="theme.ts" }
 
@@ -76,7 +78,7 @@ export type ITheme = typeof theme;
 ```
 {: file="theme.ts" }
 
-이때 객체 `theme`은 얼마든지 값이 변경 가능하므로 타입스크립트 입장에서는 타입 추론의 범위가 넓어진다. 자동완성을 하려면 타입 추론의 범위를 좁혀줘야 한다. 이때 사용할 수 있는 키워드가 `as const`로 [const assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions)을 해주는 것이다. const assertion을 해주면 해당 객체 리터럴의 프로퍼티가 읽기 전용(readonly)이 되어 자동완성이 가능해진다.
+참고로 객체 `theme`은 얼마든지 값이 변경 가능하므로 타입스크립트 입장에서는 타입 추론의 범위가 넓어진다. 자동완성을 하려면 타입 추론의 범위를 좁혀줘야 한다. 이때 사용할 수 있는 키워드가 `as const`로 [const assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions)을 해주는 것이다. const assertion을 해주면 해당 객체 리터럴의 프로퍼티가 읽기 전용(readonly)이 되어 IDE에서 자동완성이 가능해진다.
 
 ```ts
 import "@emotion/react";
