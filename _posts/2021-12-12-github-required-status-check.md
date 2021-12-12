@@ -14,7 +14,7 @@ image:
 
 Github 저장소에 브랜치 보호 규칙을 추가하여 CI를 통과하지 못한 PR은 머지할 수 없도록 설정한다.
 
-> 예제 CI는 Github Actions를 사용한다 - [참고](/_posts/2021-12-07-github-actions-yarn.md)
+> 예제 CI는 Github Actions를 사용한다 - [참고]({% post_url /_posts/2021-12-07-github-actions-yarn %})
 
 
 ## 브랜치 보호 규칙
@@ -31,7 +31,7 @@ Github 저장소마다 브랜치 보호 규칙을 추가할 수 있는데 자세
 _여기서 develop 브랜치의 규칙을 편집(`Edit`)한다_
 
 ![required status check](https://user-images.githubusercontent.com/8105528/145705014-b57c9572-baed-4dac-8fb4-9dce9a9de008.png){: .shadow }
-_staus check는 Circle CI나 Travis CI 같은 외부 CI를 사용할 수도 있는데, 여기서는 기존에 만들어 둔 [Github Actions](/_posts/2021-12-07-github-actions-yarn.md)를 사용한다_
+_staus check는 Circle CI나 Travis CI 같은 외부 CI를 사용할 수도 있는데, 여기서는 기존에 만들어 둔 [Github Actions]({% post_url 2021-12-07-github-actions-yarn %})를 사용한다_
 
 현재 Github Actions CI 파일의 내용은 다음과 같다:
 

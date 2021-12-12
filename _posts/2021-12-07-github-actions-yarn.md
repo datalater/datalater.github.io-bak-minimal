@@ -115,7 +115,7 @@ jobs:
 ```
 {: file=".github/workflows/ci.yml" }
 
-이때 린트에서 에러가 발생하거나 테스트가 실패할 경우 해당 브랜치는 머지할 수 없게 막을 수 있다. 관련 설정은 [이 글](2021-12-12-github-required-status-check.md)을 참조한다. 
+이때 린트에서 에러가 발생하거나 테스트가 실패할 경우 해당 브랜치는 머지할 수 없게 막을 수 있다. 관련 설정은 [이 글]({% post_url 2021-12-12-github-required-status-check %})을 참조한다. 
 
 ![required statuses must pass](https://user-images.githubusercontent.com/8105528/145705684-fb6d7b18-d179-4322-ba25-84157bbc46ba.png){: .shadow }
 _Github Actions 작업이 실패할 경우 PR에서 머지를 할 수 없다는 경고 메시지가 뜬다. "안 돼. 머지시킬 생각 없어. 돌아가."_
