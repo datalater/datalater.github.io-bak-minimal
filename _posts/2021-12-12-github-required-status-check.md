@@ -55,7 +55,7 @@ jobs:
 ```
 {: file=".github/workflows/on-pull-request.yml" }
 
-여기서 `jobs`의 이름에 해당하는 `build`를 검색창에 입력해야 한다.
+여기서 `jobs`의 이름에 해당하는 `build`를 검색창에 입력해야 한다. Github Actions의 `jobs` 이름이 status check의 이름으로 등록되기 때문이다.
 
 ![required status check with search](https://user-images.githubusercontent.com/8105528/145705190-46c2f55e-86bc-4104-ae4f-9c472cd8e5cf.png){: .shadow }
 
@@ -72,3 +72,4 @@ _추가가 완료되었다_
 - [Github - About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches)
 - [Github - Branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule)
 - [Github - Required status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/troubleshooting-required-status-checks)
+- [Github commnuity - mssing status checks](https://github.community/t/require-status-checks-to-pass-before-merging-missing-status-checks/179921/4)
