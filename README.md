@@ -58,3 +58,20 @@ bundle exec jekyll serve
 
 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter)를 사용하여 생성되었다.
 
+## 블로그를 커스텀으로 변경하는 방법
+
+> [참조 -Chirpy Starter](https://github.com/cotes2020/chirpy-starter)
+
+```bash
+# 스타터로 만든 실제 파일 경로를 출력한다
+$ bundle info --path jekyll-theme-chirpy
+
+# 위에서 출력한 경로로 이동한다
+$ cd /Users/cheo/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/jekyll-theme-chirpy-4.3.4
+
+# 예를 들어, uttrances 댓글을 넣으려면 _layouts/post.html을 수정해야 하므로 
+# jekyll-theme-chirpy-4.3.4에 있는 _layouts/ 폴더를 블로그 프로젝트 폴더로 복사한다
+$ rsync -av _layouts/ ~/datalater/datalater.github.io/_layouts
+
+# _layouts/post.html에서 disqus 대신에 utterances에서 제공하는 스크립트 태그를 넣는다.
+```
