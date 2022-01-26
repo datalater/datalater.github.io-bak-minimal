@@ -397,7 +397,7 @@ yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/plugin-tran
 
 `.babelrc`:
 
-```json
+```js
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
@@ -421,7 +421,7 @@ yarn add @emoition/react @emotion/styled @emotion/babel-plugin
 
 개발 환경에서만 [Emotion 클래스 네임을 컴포넌트 경로로 자동 레이블링](https://emotion.sh/docs/@emotion/babel-plugin#usage) 하도록 세팅한다.
 
-```json
+```js
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
