@@ -84,11 +84,13 @@ _theme에서 타입 오류가 발생한다_
 > [emotion-js/emotion](https://github.com/emotion-js/emotion/blob/main/packages/react/types/theming.d.ts#L9)
 
 ```ts
+// @emotion/react/types/theming.d.ts
 export interface ThemeProviderProps {
   theme: Partial<Theme> | ((outerTheme: Theme) => Theme);
   children?: React.ReactNode;
 }
 
+// @emotion/react/types/index.d.ts
 export interface Theme {}
 ```
 {: file="@emotion/react/types/theming.d.ts" }
@@ -98,7 +100,7 @@ export interface Theme {}
 
 ## 해결 방법
 
-`emotion` 패키지에 정의된 인터페이스 `Theme`에 제가 사용할 `colors` 프로퍼티를 추가하면 됩니다. [Emotion 공식문서 - Define a Theme](https://emotion.sh/docs/typescript#define-a-theme)을 보면 자세히 나와 있습니다.
+`emotion` 패키지에 정의된 인터페이스 `Theme`이 제가 사용하는 `theme`의 타입을 상속 받게 만들면 됩니다. [Emotion 공식문서 - Define a Theme](https://emotion.sh/docs/typescript#define-a-theme)을 보면 자세히 나와 있습니다.
 
 먼저 `assets/theme`에서 `theme` 객체의 인터페이스 `ITheme`을 정의하고 내보냅니다.
 
@@ -136,7 +138,7 @@ declare module "@emotion/react" {
 {: file="types/emotion.d.ts" }
 <!-- prettier-ignore-end -->
 
-참고로 객체 `theme`에 `as const`로 타입 단언(const assertion)을 해주면, 해당 객체 내부 값의 타입을 리터럴 타입으로 추론합니다. 타입 단언을 하든 안 하든 IDE에서 `props.colors`에 어떤 프로퍼티가 있는지 자동완성을 잘 해줍니다. 다만 타입 단언을 하지 않으면 객체 내부의 값은 얼마든지 바뀔 수 있기 때문에 `string`으로 추론하여 프로퍼티 이름만 자동완성을 지원해주지만, 타입 단언을 할 경우 리터럴 타입으로 변경되어 프로퍼티의 값(색상 값)까지 자동완성을 해줍니다.
+참고로 객체 `theme`에 `as const`로 타입 단언(const assertion)을 해주면, 해당 객체 내부 값의 타입을 리터럴 타입으로 추론합니다. 타입 단언을 하든 안 하든 IDE에서 `props.theme`에 어떤 프로퍼티가 있는지 자동완성을 잘 해줍니다. 다만 타입 단언을 하지 않으면 객체 내부의 값은 얼마든지 바뀔 수 있기 때문에 `string`으로 추론하여 프로퍼티 이름만 자동완성을 지원해주지만, 타입 단언을 할 경우 객체 내부의 값이 리터럴 타입으로 변경되어 프로퍼티의 값(색상 값)까지 자동완성을 해줍니다.
 
 ## 결과
 
