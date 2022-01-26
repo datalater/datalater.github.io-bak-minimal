@@ -33,6 +33,38 @@ image:
 _theme에서 타입 오류가 발생한다_
 ```
 
+### Prettier ignore
+
+테이블 정렬하는 자동 포맷 비활성화:
+
+```markdown
+**ESLint 패키지**
+
+{{<!-- prettier-ignore -->}}
+| 용어 | 뜻 | 예시 |
+| :---: | :---: | :---: |
+| eslint-plugin-\* | ESLint 커스텀 규칙을 정의한 패키지 | [`eslint-plugin-react`](https://github.com/yannickcr/eslint-plugin-react) |
+| eslint-config-\* | 커스텀 규칙을 포함하여 ESLint 설정 자체를 정의한 패키지 {::nomarkdown}</br>{:/} (eslint-config-\*를 포함하기도 한다) | [`eslint-config-airbnb`](https://www.npmjs.com/package/eslint-config-airbnb) |
+```
+
+파일명과 코드블록 사이에 개행 넣는 자동 포맷 비활성화:
+
+````markdown
+**린트 설정 파일 작성:**
+
+<!-- prettier-ignore-start -->
+```js
+module.exports = {
+  root: true,
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+};
+```
+{: file=".eslintrc.js" }
+<!-- prettier-ignore-end -->
+````
+
 ## 서버 실행 방법
 
 ```bash
@@ -42,17 +74,6 @@ bundle install
 # 로컬 서버 실행
 bundle exec jekyll serve
 ```
-
-## 환경 설정
-
-````markdown
-```shell
-# content
-```
-{: file="path/to/file" }
-````
-
-위와 같이 코드 블록에 파일명을 명시하려면 `{: file="path/to/file" }`가 코드 블록 닫는 줄(` ``` `)의 바로 다음 줄에 있어야 한다. 그런데 `prettier`를 사용하면 자동으로 개행을 시키므로 이를 비활성화해야 한다. 따라서 `.vscode/settings.json` 파일을 생성하여 마크다운 파일은 기본 포매터를 `null`로 설정한다.
 
 ## 이 블로그는 어떻게 생성되었나
 
@@ -69,7 +90,7 @@ $ bundle info --path jekyll-theme-chirpy
 # 위에서 출력한 경로로 이동한다
 $ cd /Users/cheo/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/jekyll-theme-chirpy-4.3.4
 
-# 예를 들어, uttrances 댓글을 넣으려면 _layouts/post.html을 수정해야 하므로 
+# 예를 들어, uttrances 댓글을 넣으려면 _layouts/post.html을 수정해야 하므로
 # jekyll-theme-chirpy-4.3.4에 있는 _layouts/ 폴더를 블로그 프로젝트 폴더로 복사한다
 $ rsync -av _layouts/ ~/datalater/datalater.github.io/_layouts
 
