@@ -314,7 +314,6 @@ ESLint 플러그인 설치:
 
 ```bash
 yarn add -D eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
-
 ```
 
 `.eslintrc.js`:
@@ -420,7 +419,7 @@ yarn add @emoition/react @emotion/styled @emotion/babel-plugin
 
 `.babelrc`:
 
-Emotion의 스타읻드 컴포넌트 사용 시 빠른 디버깅을 위해 소스맵을 사용하도록 설정한다.
+개발 환경에서만 [Emotion 클래스 네임을 컴포넌트 경로로 자동 레이블링](https://emotion.sh/docs/@emotion/babel-plugin#usage) 하도록 세팅한다.
 
 ```json
 {
@@ -489,6 +488,8 @@ export default App;
 ```
 
 `src/components/Button/Button.tsx`:
+
+> [cobaltinc/caple-design-system - Button](https://github.com/cobaltinc/caple-design-system/tree/master/packages/react/src/components/Button)
 
 ```tsx
 import React from "react";
@@ -651,3 +652,5 @@ module.exports = {
   - [TypeScript ESLint](https://typescript-eslint.io/docs/linting/)
   - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/linting/)
 - [cobaltinc/caple-design-system - Button](https://github.com/cobaltinc/caple-design-system/tree/master/packages/react/src/components/Button)
+- Emotion
+  - [Github PR - 이모션 클래스 네임을 컴포넌트 경로로 자동 레이블링 하도록 세팅](https://github.com/prgrms-web-devcourse/Team_BbungCles_Devnity_FE/pull/164)
