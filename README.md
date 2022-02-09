@@ -81,7 +81,7 @@ bundle exec jekyll serve
 
 ## 블로그를 커스텀으로 변경하는 방법
 
-> [참조 -Chirpy Starter](https://github.com/cotes2020/chirpy-starter)
+> [참조 - Chirpy Starter](https://github.com/cotes2020/chirpy-starter)
 
 ```bash
 # 스타터로 만든 실제 파일 경로를 출력한다
