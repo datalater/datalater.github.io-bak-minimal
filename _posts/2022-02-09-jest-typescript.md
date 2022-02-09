@@ -19,7 +19,7 @@ ESModule 방식과 타입스크립트로 테스트 코드를 작성할 수 있�
 <details>
 <summary><strong>ESModule</strong></summary>
 
-ES6에 도입된 모듈 시스템으로 <code class="language-plaintext highlighter-rouge">import</code>, <code class="language-plaintext highlighter-rouge">export</code>를 사용합니다.
+ES6에 도입된 모듈 시스템을 말하며 <code class="language-plaintext highlighter-rouge">import</code>, <code class="language-plaintext highlighter-rouge">export</code>를 사용합니다.
 
 </details>
 
