@@ -67,7 +67,7 @@ module.exports = {
 {: file="package.json" }
 <!-- prettier-ignore-end -->
 
-## See also
+## 📚 See also
 
 - [Jest - Using TypeScript via ts-jest](https://jestjs.io/docs/getting-started#using-typescript-via-ts-jest)
 - [Github - kulshekhar/ts-jest](https://github.com/kulshekhar/ts-jest)
