@@ -1,5 +1,5 @@
 ---
-title: emotion theme 타입 지정하는 방법 (feat. 자동완성)
+title: emotion ThemeProvider의 theme 타입 지정하는 방법 (feat. 자동완성)
 date: 2021-12-04
 categories: [TIL]
 tags: [타입스크립트, emotion] # TAG names should always be lowercase
