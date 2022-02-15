@@ -43,7 +43,7 @@ order: 5
 
 ## 레이아웃 추가하기
 
-`random.md` 파일에 적용할 레이아웃 `random.html`을 추가합니다. 랜덤 포스팅을 불러오기 전에 로딩 메시지 `...loading`을 보여줍니다.
+`random.md` 파일에 레이아웃을 적용하기 위해 `_layouts` 디렉토리에 `/random.html` 파일을 추가합니다.
 
 <!-- prettier-ignore-start -->
 {% raw %}
@@ -58,6 +58,8 @@ layout: page
 {: file="_layouts/random.html" }
 {% endraw %}
 <!-- prettier-ignore-end -->
+
+> 랜덤 포스팅을 불러오기 전에 로딩 메시지 `...loading`을 보여줍니다.
 
 현재 블로그에서 사용하고 있는 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter)는 `/arhicves` URL로 이동하면 모든 포스트 목록을 보여줍니다. `/archives` 리소스를 사용하여 모든 포스트 목록의 URL을 파싱한 후 랜덤으로 고른 포스트 URL로 이동하는 코드를 추가로 작성합니다.
 
