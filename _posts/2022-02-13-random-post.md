@@ -43,10 +43,10 @@ order: 5
 
 ## 레이아웃 추가하기
 
-`random.md` 파일에 적용할 레이아웃 `random.html`을 추가합니다.
+`random.md` 파일에 적용할 레이아웃 `random.html`을 추가합니다. 랜덤 포스팅을 불러오기 전에 로딩 메시지 `...loading`을 보여줍니다.
 
+<!-- prettier-ignore-start -->
 {% raw %}
-
 ```html
 ---
 layout: page
@@ -55,13 +55,14 @@ layout: page
 
 <div>...loading</div>
 ```
-
+{: file="_layouts/random.html" }
 {% endraw %}
+<!-- prettier-ignore-end -->
 
-현재 블로그에서 사용하고 있는 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter)는 `/arhicves` URL로 이동하면 모든 포스트 목록을 보여줍니다. 여기서 모든 포스트 목록의 URL을 파싱한 후 랜덤으로 고른 포스트 URL로 이동합니다.
+현재 블로그에서 사용하고 있는 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter)는 `/arhicves` URL로 이동하면 모든 포스트 목록을 보여줍니다. `/archives` 리소스를 사용하여 모든 포스트 목록의 URL을 파싱한 후 랜덤으로 고른 포스트 URL로 이동하는 코드를 추가로 작성합니다.
 
+<!-- prettier-ignore-start -->
 {% raw %}
-
 ```html
 ---
 layout: page
@@ -70,7 +71,7 @@ layout: page
 
 <div>...loading</div>
 
-<script type="text/javascript">
+<script type="text/javascript"> // here
   function main() {
     // 모든 포스트 URL 목록이 나오는 /archives 리소스를 파싱합니다.
     fetch("/archives")
@@ -99,8 +100,11 @@ layout: page
   window.onload = main;
 </script>
 ```
-
+{: file="_layouts/random.html" }
 {% endraw %}
+<!-- prettier-ignore-end -->
+
+> fetch 메서드를 실행할 때 동일한 오리진의 리소스를 가져오므로 SOP(Same Origin Policy)를 준수합니다. 따라서 CORS(Cross Origin Resource Sharing)를 따로 허용해줄 필요가 없습니다.
 
 ## 📚 함께 읽기
 
