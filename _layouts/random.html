@@ -1,32 +1,25 @@
 ---
-layout: page
+layout: default
 # The random post layout
 ---
 
 <div>...loading</div>
 
 <script type="text/javascript">
-  function main() {
+  (function main() {
     fetch("/archives")
       .then((response) => response.text())
       .then((htmlText) => {
         const parser = new DOMParser();
-
         const document = parser.parseFromString(htmlText, "text/html");
 
         const posts = document.querySelectorAll("#archives [href*=posts]");
-
         const links = Array.from(posts).map((post) => post.href);
 
         const randomIndex = Math.floor(Math.random() * links.length);
-
         const randomLink = links[randomIndex];
-
-        console.log(randomLink);
 
         window.location = randomLink;
       });
-  }
-
-  window.onload = main;
+  })();
 </script>

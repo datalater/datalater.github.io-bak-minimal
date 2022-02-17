@@ -61,7 +61,7 @@ layout: page
 
 > 랜덤 포스팅을 불러오기 전에 로딩 메시지 `...loading`을 보여줍니다.
 
-현재 블로그에서 사용하고 있는 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter)는 `/arhicves` URL로 이동하면 모든 포스트 목록을 보여줍니다. `/archives` 리소스를 사용하여 모든 포스트 목록의 URL을 파싱한 후 랜덤으로 고른 포스트 URL로 이동하는 코드를 추가로 작성합니다.
+현재 블로그에서 사용하고 있는 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter)는 `/arhicves` URL로 이동하면 모든 포스트 목록을 보여줍니다. `/archives` 리소스를 사용하여 모든 포스트 목록의 URL을 파싱한 후 랜덤으로 고른 포스트 URL로 이동하는 코드를 [즉시 실행 함수(IIFE)](https://developer.mozilla.org/ko/docs/Glossary/IIFE)로 작성합니다.
 
 <!-- prettier-ignore-start -->
 {% raw %}
@@ -74,32 +74,26 @@ layout: page
 <div>...loading</div>
 
 <script type="text/javascript"> // here
-  function main() {
+  (function main() {
     // 모든 포스트 URL 목록이 나오는 /archives 리소스를 파싱합니다.
     fetch("/archives")
       .then((response) => response.text())
       .then((htmlText) => {
         // html text를 DOM 파서를 이용하여 파싱합니다.
         const parser = new DOMParser();
-
         const document = parser.parseFromString(htmlText, "text/html");
 
         // href에 /posts/* 를 포함하고 있는 모든 요소를 찾습니다.
         const posts = document.querySelectorAll("#archives [href*=posts]");
-
         const links = Array.from(posts).map((post) => post.href);
 
         // 링크 배열에서 랜덤 인덱스를 선택한 후 해당 포스트 URL로 이동합니다.
         const randomIndex = Math.floor(Math.random() * links.length);
-
         const randomLink = links[randomIndex];
 
         window.location = randomLink;
       });
-  }
-
-  // 현재 페이지가 로드되면 main 함수를 실행합니다.
-  window.onload = main;
+  })();
 </script>
 ```
 {: file="_layouts/random.html" }
