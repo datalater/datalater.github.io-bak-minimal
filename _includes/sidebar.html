@@ -92,3 +92,30 @@
   </div> <!-- .sidebar-bottom -->
 
 </div><!-- #sidebar -->
+
+<!-- random post -->
+<script type="text/javascript">
+  const random = document.querySelector("[href*='/random']");
+
+  if (random) {
+    random.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      fetch("/archives")
+        .then((response) => response.text())
+        .then((htmlText) => {
+          const parser = new DOMParser();
+          const document = parser.parseFromString(htmlText, "text/html");
+
+          const posts = document.querySelectorAll("#archives [href*=posts]");
+          const links = Array.from(posts).map((post) => post.href);
+
+          const randomIndex = Math.floor(Math.random() * links.length);
+          const randomLink = links[randomIndex];
+
+          window.location = randomLink;
+        })
+    })  
+  }
+
+</script>
