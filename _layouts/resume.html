@@ -1,0 +1,657 @@
+---
+layout: compress
+# Default layout
+---
+
+<!DOCTYPE html>
+
+{% include lang.html %} {% capture prefer_mode %} {% if site.theme_mode %}
+mode="{{ site.theme_mode }}" {% endif %} {% endcapture %}
+
+<html lang="{{ site.lang }}" {{ prefer_mode }}>
+  {% include head.html %}
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+  />
+
+  <body>
+    <div class="resume-wrapper">
+      <div class="resume max-w-800 py-60 px-30 bg-white">
+        <section class="profile mb-40">
+          <div class="columns-2">
+            <div class="columns-2__left">
+              <h1 class="name bold mt-0 text-right-exception">조민철</h1>
+            </div>
+            <div class="columns-2__right">
+              <h2 class="role bold mb-6">Frontend Developer</h2>
+              <p class="contact size-13 mb-4-exception">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:the7mincheol@gmail.com"
+                  >the7mincheol@gmail.com</a
+                >
+              </p>
+              <p class="contact size-13 mb-4-exception">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/datalater">datalater</a>
+              </p>
+              <p class="contact size-13 mb-4-exception">
+                <i class="fas fa-rss"></i>
+                <a href="https://datalater.github.io">datalater.github.io</a>
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="summary columns-2 mb-40">
+          <div class="columns-2__left">
+            <h2 class="title bold uppercase text-right-exception mb-8">요약</h2>
+          </div>
+          <div class="columns-2__right">
+            <p class="summary__text mb-12">
+              2년 차 웹 개발자로 초기 스타트업에 합류하여 웹 서비스를 개발하고
+              운영한 경험이 있습니다. PHP, MySQL, AWS, Git 등의 기술을 사용해서
+              서버 사이드를 개발한 경험이 있으며 현재는 JavaScript와 React를
+              사용하여 클라이언트 사이드 개발에 주력하고 있습니다.
+            </p>
+            <p class="summary__text mb-12">
+              사용자에게 눈에 보이는 가치를 전달하는 것을 좋아하기 때문에 CSS나
+              Three.js 등 다양한 UI 기술을 활용해서 사이드 프로젝트 진행하는
+              것을 즐깁니다. 문제를 해결할 때는 계획을 먼저 세우는 편입니다.
+              요구사항을 분석하고 할 일 목록을 만든 뒤 개발하는 것을 생활화하고
+              있습니다. 이때 가능하면 테스트 코드를 먼저 작성하여 자동화된
+              테스트로 개발을 이끌어나가는 것을 좋아합니다. 지식을 글로
+              체계화하고 공유하는 것을 좋아하여 기술 블로그를 운영하면서 꾸준히
+              기술 포스트를 작성하고 있습니다.
+            </p>
+            <p class="summary__text mb-12">
+              개발자의 코드는 궁극적으로 비즈니스 성장에 기여해야 한다고
+              생각합니다. 프론트엔드 개발자로서 사용자의 편의를 증진하는 UI
+              개발을 할 수 있도록 꾸준히 학습하고 경험하고 있습니다.
+            </p>
+          </div>
+        </section>
+        <section class="skills mb-40">
+          <div class="columns-2">
+            <div class="columns-2__left">
+              <h2 class="title bold uppercase text-right-exception mb-20">
+                기술
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="core-skills mb-40">
+          <div class="columns-2">
+            <div class="columns-2__left">
+              <h2 class="title bold uppercase text-right-exception mb-20">
+                주요 기술
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="experiences project mb-40">
+          <div class="columns-2">
+            <div class="columns-2__left">
+              <h2 class="title bold uppercase text-right-exception mb-20">
+                프로젝트
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="experiences opensource mb-40">
+          <div class="columns-2">
+            <div class="columns-2__left">
+              <h2 class="title bold uppercase text-right-exception mb-20">
+                오픈소스
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="experiences work mb-40">
+          <div class="columns-2">
+            <div class="columns-2__left">
+              <h2 class="title bold uppercase text-right-exception mb-20">
+                경력
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="educations mb-40">
+          <div class="columns-2">
+            <div class="columns-2__left">
+              <h2 class="title bold uppercase text-right-exception mb-20">
+                교육
+              </h2>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script>
+      const skills = [
+        {
+          category: "Frontend",
+          items: [
+            "JavaScript",
+            "React",
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "Three.js",
+          ],
+        },
+        {
+          category: "Backend",
+          items: ["PHP", "MySQL", "RESTful API", "AWS", "Google Apps Script"],
+        },
+        {
+          category: "ETC",
+          items: ["Git", "Github", "Jira", "Confluence", "Slack", "Vim"],
+        },
+      ];
+
+      const coreSkills = [
+        {
+          category: "Frontend",
+          items: [
+            {
+              title: "JavaScript",
+              abilities: [
+                "프레임워크 없이 컴포넌트 단위로 UI 개발을 할 수 있습니다.",
+                "ES6+ 문법에 익숙합니다.",
+              ],
+            },
+            {
+              title: "React",
+              abilities: [
+                "TypeScript로 정적 타이핑을 적용하여 개발할 수 있습니다.",
+                "useEffect 등 리액트 훅이나 커스텀 훅을 직접 만들어서 사용할 수 있습니다.",
+                "Emotion을 사용하여 Styled 컴포넌트를 만들어서 개발할 수 있습니다.",
+                "Redux나 Recoil을 사용하여 상태 관리를 할 수 있습니다.",
+                "Webpack 등 모듈 번들러를 직접 세팅할 수 있습니다.",
+                "React Testing Library와 Jest를 사용하여 테스트 코드를 작성할 수 있습니다.",
+              ],
+            },
+            {
+              title: "HTML/CSS",
+              abilities: [
+                "Semantic HTML을 사용할 수 있습니다.",
+                "미디어 쿼리를 사용하여 반응형 웹을 만들 수 있습니다.",
+                "Flexbox와 Grid를 사용할 수 있습니다.",
+              ],
+            },
+          ],
+        },
+        {
+          category: "ETC",
+          items: [
+            {
+              title: "Git/Github",
+              abilities: [
+                "rebase -i를 능숙하게 다룰 수 있습니다.",
+                "Git의 구조와 Git을 이용한 협업 플로우를 설명할 수 있습니다.",
+                "Github Actions를 사용하여 CI/CD 파이프라인을 세팅할 수 있습니다.",
+              ],
+            },
+          ],
+        },
+      ];
+
+      const $skills = document.querySelector(".skills");
+      $skills.appendChild(
+        fragment(
+          skills
+            .map(
+              (skill) => /* html */ `
+              <section class="skill columns-2 mb-16">
+                <div class="columns-2__left">
+                  <h3 class="category bold uppercase text-right-exception text-gray mb-16">${
+                    skill?.category
+                  }</h3>
+                </div>
+                <div class="columns-2__right flex-grow">
+                  <ul class="items grid grid-autofit-cols-200">
+                    ${skill?.items
+                      .map((item) => `<li class="item">${item}</li>`)
+                      .join("")} 
+                  </ul>
+                </div>
+              </section>`
+            )
+            .join("")
+        )
+      );
+
+      const $coreSkills = document.querySelector(".core-skills");
+      $coreSkills.appendChild(
+        fragment(
+          coreSkills
+            .map(
+              (skill) => /* html */ `
+              <section class="core-skill columns-2 mb-16">
+                <div class="columns-2__left">
+                  <h3 class="category bold uppercase text-right-exception text-gray mb-16">${
+                    skill?.category
+                  }</h3>
+                </div>
+                <div class="columns-2__right">
+                  <section class="items">
+                    ${skill?.items
+                      .map(
+                        (item) =>
+                          `<section class="item mb-16">
+                            <h3 class="title bold mb-8">${item?.title}</h3> 
+                            <ul class="abilities">
+                              ${item.abilities
+                                .map(
+                                  (ability) =>
+                                    `<li class="ability">${ability}</li>`
+                                )
+                                .join("")} 
+                            </ul>
+                          </section>`
+                      )
+                      .join("")} 
+                  </section>
+                </div>
+              </section>`
+            )
+            .join("")
+        )
+      );
+
+      const projects = [
+        {
+          title: "데브니티",
+          description: "데브코스 부트캠프 수강생을 위한 커뮤니티 플랫폼",
+          productUrl: "https://devnity.xyz/",
+          githubUrl:
+            "https://github.com/prgrms-web-devcourse/Team_BbungCles_Devnity_FE",
+          role: "팀장, 프론트엔드 개발자",
+          period: "2021.11 - Present",
+          skills: [
+            "React",
+            "TypeScript",
+            "Recoil",
+            "React Query",
+            "Emotion",
+            "Webpack",
+            "Lottie",
+            "Kakao Map API",
+            "Jest",
+            "React Testing Library",
+            "ESLint",
+            "Prettier",
+            "Figma",
+            "Github Actions",
+          ],
+          jobs: [
+            {
+              title: "UI 개발",
+              description:
+                "메인 페이지 및 맵각코(지도 UI에서 모임을 모집하는 기능) 페이지 개발",
+              points: [
+                "Container/Presenter 패턴을 사용하여 상태 관리 로직과 UI 로직을 분리하여 컴포넌트를 개발했습니다.",
+                "Redux에 비해 세팅에 필요한 보일러플레이트가 가벼운 Recoil을 도입하여 전역 상태를 관리했습니다.",
+                "캐싱이나 서버 상태 동기화에 대한 간편한 API를 지원하는 React Query를 도입하여 비동기 데이터를 처리했습니다.",
+                "다양하고 많은 사용자를 타겟으로 하는 서비스 특성상 사용자의 웹 접근성을 고려한 색상을 사용했습니다.",
+                "끊김 없는 인터랙션을 위해 낙관적 업데이트틀 사용하여 UX를 개선했습니다. Lottie를 이용하여 애니메이션을 적용했습니다.",
+                "가능한 경우 TDD로 UI를 개발했습니다. 테스트 작성이 처음인 팀원을 위해 간단한 세미나를 열어 테스트 작성과 TDD에 대한 지식을 공유했습니다. 테스트 작성이 힘든 경우 대안으로 컴포넌트에 대한 스펙 문서를 작성하는 프로세스를 도입했습니다.",
+              ],
+            },
+            {
+              title: "협업",
+              points: [
+                "<a href='https://jayday.notion.site/c0d01f73d773494d8f87673880325c74?v=a053069c25c443e0bed98f3f43db94d8'>유저 시나리오</a> 작성을 제안했고 함께 작성하여 요구사항을 명확히 하고 업무를 분배했습니다.",
+                "React Query나 Recoil처럼 새로운 기술을 도입하기 전에 왜 사용하면 좋을지 자료조사를 제안했고 함께 논의하여 도입했습니다.",
+                "Webpack 번들러, 린트 및 테스트 환경 등 프로젝트 개발 환경을 설정했습니다.",
+                "Git에 익숙하지 않은 팀원을 위해 <a href='https://jayday.notion.site/Github-ebf008fc9f594eb1bafb0a4e58acedbf'>Git 협업 매뉴얼</a>을 작성했습니다. 일관적이고 효율적인 커뮤니케이션을 위해 Github 이슈 템플릿과 PR 템플릿을 설정했습니다.",
+                "Git 브랜치 전략을 함께 세우고 시스템적으로 보완하기 위해 <a href='https://datalater.github.io/posts/github-required-status-check/'>Github 저장소의 브랜치 보호 및 머지 규칙</a>을 설정했습니다. <a href='https://datalater.github.io/posts/github-actions-yarn/'>Github Actions를 사용하여 린트 및 테스트 자동화</a>하는 CI 파이프라인을 설정했습니다.",
+                "Vercel을 이용하여 배포하고 모두가 배포할 수 있도록 <a href='https://jayday.notion.site/6d95eafa14ef4be9a8646074d6799880'>배포 메뉴얼</a>을 작성했습니다.",
+              ],
+            },
+          ],
+        },
+        {
+          title: "달리는 모각코",
+          description: "타이머와 실시간 인증 기능을 제공하는 모각코 서비스",
+          productUrl: "https://running-mogakco.netlify.app/",
+          githubUrl:
+            "https://github.com/prgrms-fe-devcourse/FEDC1_Mogakco_Dali2",
+          role: "팀장, 프론트엔드 개발자",
+          period: "2021.10 - Present",
+          skills: [
+            "React",
+            "Emotion",
+            "Webpack",
+            "ESLint",
+            "StyleLint",
+            "Prettier",
+            "Figma",
+            "OvenApp",
+            "Github Actions",
+          ],
+          jobs: [
+            {
+              title: "UI 개발",
+              description:
+                "로그인 및 회원가입 페이지, 인증 사진 갤러리 페이지 개발",
+              points: [
+                "Props Drilling을 막기 위해 Context API를 사용하여 여러 컴포넌트에서 공통으로 사용하는 상태를 관리했습니다.",
+                "Grid를 사용하여 이미지 갤러리를 반응형으로 정렬하는 기능을 구현했습니다.",
+                "끊김 없는 인터랙션을 위해 낙관적 업데이트틀 사용하여 UX를 개선했습니다.",
+                "<a href='https://datalater.github.io/posts/react-useEffect-optimization/'>타이머 컴포넌트의 useEffect를 최적화</a>하여 성능을 개선했습니다.",
+              ],
+            },
+            {
+              title: "협업",
+              points: [
+                "<a href='https://www.notion.so/jayday/cc2b82e8b52643f2be913eb9d92745be?v=7ba22c4c90d54db8945842093fb9168c'>유저 시나리오</a> 작성을 제안했고 함께 작성하여 요구사항을 명확히 하고 업무를 분배했습니다.",
+                "Webpack 번들러, 린트 등 프로젝트 개발 환경을 설정했습니다.",
+                "Git에 익숙하지 않은 팀원을 위해 <a href='https://jayday.notion.site/Github-28a9946e746344b492e2d07f47d44721'>Git 협업 매뉴얼</a>을 작성했습니다.  일관적이고 효율적인 커뮤니케이션을 위해 Github 이슈 템플릿과 PR 템플릿을 설정했습니다.",
+                "Git 브랜치 전략을 함께 세우고 시스템적으로 보완하기 위해 <a href='https://datalater.github.io/posts/github-required-status-check/'>Github 저장소의 브랜치 보호 및 머지 규칙</a>을 설정했습니다. <a href='https://datalater.github.io/posts/github-actions-yarn/'>Github Actions를 사용하여 린트를 자동화</a>하는 CI 파이프라인을 설정했습니다.",
+                "<a href='https://jayday.notion.site/Today-We-Learned-cb06ff56e599446ea5c21ddaa96113fd'>TWL(Today We Learned)</a>을 작성하여 프로젝트를 하면서 학습한 내용이나 트러블슈팅 일지를 공유했습니다.",
+                "Netlify를 이용하여 배포하고 모두가 배포할 수 있도록 <a href='https://jayday.notion.site/6d95eafa14ef4be9a8646074d6799880'>배포 메뉴얼</a>을 작성했습니다.",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Where do we meet?",
+          description: "약속 장소 정할 때 중간지점을 알려주는 서비스",
+          productUrl: "https://datalater.codesoom.com/",
+          githubUrl: "https://github.com/datalater/project-react-3-datalater",
+          role: "개인 프로젝트",
+          period: "2021.03 - 2021.04",
+          skills: [
+            "React",
+            "Redux",
+            "Emotion",
+            "Webpack",
+            "ESLint",
+            "Jest",
+            "React Testing Library",
+          ],
+          jobs: [
+            {
+              title: "UI 개발",
+              description:
+                "주소 검색 페이지, 추천 장소를 보여주는 지도 페이지 개발",
+              points: [
+                "Container/Presentor 패턴을 사용하여 상태 관리 로직과 UI 로직을 분리하여 컴포넌트 개발",
+                "테스트 코드를 먼저 작성하여 자동화된 테스트로 개발을 이끌어나가는 TDD 수행",
+                "<a href='https://github.com/datalater/project-react-3-datalater#test-coverage'>테스트 커버리지 100%</a> 달성",
+              ],
+            },
+          ],
+        },
+      ];
+
+      const $projects = document.querySelector(".experiences.project");
+      $projects.appendChild(fragment(projects.map(experienceHTML).join("")));
+
+      const opensources = [
+        {
+          title: "스포트라이트",
+          githubUrl: "https://github.com/datalater/spotlight",
+          role: "Owner & Maintainer",
+          descriptions: [
+            "화면공유 시 스포트라이트를 쏜 것 처럼 마우스 포인터를 강조해주는 크롬 익스텐션 앱",
+            "온라인으로 화면공유를 할 때 발표 도구로서 마우스 포인터를 강조하기 위해 개발",
+            "브라우저 렌더링 최적화를 위해 Reflow가 일어나지 않는 background-image 속성 활용",
+          ],
+          skills: ["HTML", "CSS", "JavaScript"],
+        },
+        {
+          title: "프롱캣",
+          githubUrl: "https://github.com/datalater/frontcat",
+          role: "Owner & Maintainer",
+          descriptions: [
+            "버벅거리는 UI 에러를 클릭 한 번으로 해결하는 크롬 익스텐션 앱",
+            "부트캠프 강의 영상을 재시작할 때 재생 버튼이 눌리지 않는 현상이 대부분의 수강생들에게 반복되어 이러한 불편함을 버튼 하나로 해결하기 위해 개발",
+            "출석 확인서를 제출할 때 출석부 뷰에서 생기는 스크롤 때문에 여러 번 캡처해야 하는 불편함을 해소하기 위한 기능 추가",
+          ],
+          skills: ["HTML", "CSS", "JavaScript"],
+        },
+      ];
+
+      const $opensources = document.querySelector(".experiences.opensource");
+      $opensources.appendChild(
+        fragment(
+          opensources
+            .map(
+              (opensource) => /* html */ `
+              <section class="opensource columns-2 mb-16">
+                <div class="columns-2__left">
+                  <h3 class="title bold uppercase text-right-exception text-gray mb-16">
+                  ${opensource?.title}
+                  ${
+                    opensource?.productUrl
+                      ? `<a class="size-13" href="${opensource?.productUrl}"><i class="fas fa-link" title="product"></i></a>`
+                      : ""
+                  }
+                  ${
+                    opensource?.githubUrl
+                      ? `<a class="size-13" href="${opensource?.githubUrl}"><i class="fab fa-github" title="github"></i></a>`
+                      : ""
+                  }</h3>
+                </div>
+                <div class="columns-2__right">
+                  <section class="content">
+                    <ul class="contents">
+                      <li class="role keep-all">${opensource?.role}</li>
+                      ${opensource?.descriptions
+                        .map(
+                          (description) =>
+                            `<li class="description keep-all">${description}</li>`
+                        )
+                        .join("")} 
+                      <li class="skills keep-all">
+                        ${opensource?.skills
+                          ?.map((skill) => `<code class="code">${skill}</code>`)
+                          .join("")}
+                      </li>
+                    </ul>
+                  </section>
+                </div>
+              </section>
+              `
+            )
+            .join("")
+        )
+      );
+
+      const works = [
+        {
+          period: "2018-06 ~ 2020.04",
+          title: "아티웰스",
+          role: "백엔드 개발자",
+          skills: [
+            "PHP",
+            "MySQL",
+            "AWS",
+            "Linux",
+            "Google Apps Script",
+            "PHPUnit",
+          ],
+          jobs: [
+            {
+              title: "셀리몬",
+              link: "https://www.sellymon.com/",
+              description:
+                "공동주택, 개별주택, 상가, 토지 등 약 5천만 건 이상의 전국 부동산을 대상으로 재산세와 종합부동산세, 양도세를 자동으로 산출하는 서비스",
+              points: [
+                "부동산 검색 시스템 정교화",
+                "세금 백엔드 API 개발",
+                "공공데이터를 사용하여 전국 부동산 DB 구축 및 관리",
+                "부동산 평가 보고서 생성",
+                "객체 간 메시지를 주고 받는 방식으로 설계 및 개발",
+                "슬로우 쿼리를 로깅하여 쿼리 튜닝",
+                "기존 1000줄이 넘는 레거시 파일 리팩터링 수행",
+                "세금 도메인에 대한 용어 사전 구축",
+                "단위 및 통합 테스트 작성",
+              ],
+            },
+            {
+              title: "아파트 실거래가 로봇 기사 서비스",
+              link: "https://biz.chosun.com/site/data/html_dir/2020/09/23/2020092301294.html",
+              description:
+                "국토교통부 실거래가공개시스템 데이터를 실시간으로 수집하여 자동으로 아파트 실거래가 뉴스 기사를 생성하는 서비스",
+              points: [
+                "AWS RDS를 사용하여 DB 구축",
+                "HTML 템플릿과 AWS S3를 사용하여 기사 이미지와 텍스트를 생성하는 API 개발",
+                "Linux crontab을 이용하여 실시간 기사 생성",
+                "단위 및 통합 테스트 작성",
+              ],
+            },
+          ],
+        },
+      ];
+
+      const $works = document.querySelector(".experiences.work");
+      $works.appendChild(fragment(works.map(experienceHTML).join("")));
+
+      const educations = [
+        {
+          period: "2021.08 ~ 2021.12",
+          title: "프로그래머스 데브코스 프론트엔드 1기",
+          descriptions: [
+            "프론트엔드 실무 교육 수강",
+            "JavaScript, React 학습",
+            "팀 프로젝트 진행",
+          ],
+        },
+        {
+          period: "2021.01 ~ 2021.04",
+          title: "코드숨 리액트 과정 3기",
+          descriptions: [
+            "프론트엔드 실무 교육 수강",
+            "TDD 학습",
+            "개인 프로젝트 진행",
+          ],
+        },
+        {
+          period: "2019.09 ~ 2020.04",
+          title: "달랩 멘토링 2기",
+          descriptions: ["소프트웨어 개발자 성장 멘토링", "개인 프로젝트 진행"],
+        },
+        {
+          period: "2010.03 ~ 2018.02",
+          title: "한국외국어대학교",
+          descriptions: ["영문학 및 경영학 학사"],
+        },
+      ];
+
+      const $educations = document.querySelector(".educations");
+      $educations.appendChild(
+        fragment(
+          educations
+            .map(
+              (education) => /* html */ ` 
+              <section class="education columns-2 mb-16">
+                <div class="columns-2__left">
+                  <h4 class="period bold text-gray text-right-exception mb-16">${
+                    education?.period
+                  }</h4>
+                </div>
+                <div class="columns-2__right">
+                  <section class="profile mb-20">
+                    <h3 class="title bold uppercase mb-8">${
+                      education?.title
+                    }</h3>
+                    <ul class="contents">
+                      ${education?.descriptions
+                        .map(
+                          (description) =>
+                            `<li class="description keep-all">${description}</li>`
+                        )
+                        .join("")} 
+                    </ul>
+                  </section>
+                </div>
+              </section>
+            `
+            )
+            .join("")
+        )
+      );
+
+      function fragment(innerHTML) {
+        const $template = document.createElement("template");
+
+        $template.innerHTML = innerHTML;
+
+        return $template.content;
+      }
+
+      function experienceHTML(experience) {
+        return /* html */ `
+          <section class="experience columns-2 mb-16">
+            <div class="columns-2__left">
+              <h4 class="period bold text-gray text-right-exception mb-16">${
+                experience?.period
+              }</h4>
+            </div>
+            <div class="columns-2__right">
+              <section class="profile mb-20">
+                <h3 class="title bold uppercase mb-8">
+                  ${experience?.title}
+                  ${
+                    experience?.productUrl
+                      ? `<a class="size-13" href="${experience?.productUrl}"><i class="fas fa-link" title="product"></i></a>`
+                      : ""
+                  }
+                  ${
+                    experience?.githubUrl
+                      ? `<a class="size-13" href="${experience?.githubUrl}"><i class="fab fa-github" title="github"></i></a>`
+                      : ""
+                  }
+                </h3>
+                ${
+                  experience?.description
+                    ? `<p class="description italic text-gray">${experience.description}</p>`
+                    : ""
+                }
+                <p class="role bold text-gray">${experience?.role}</p>
+                <p class="skills">
+                  ${experience?.skills
+                    ?.map((skill) => `<code class="code">${skill}</code>`)
+                    .join("")}
+                </p>
+              </section>
+              <section class="jobs">
+                ${experience?.jobs?.map(jobHTML).join("")}
+              </section>
+            </div>
+          </section>
+        `;
+      }
+
+      function jobHTML(job) {
+        if (!job) {
+          return;
+        }
+
+        return /* html */ `
+          <section class="job mb-16">
+            <h4 class="title bold uppercase mb-8">
+              ${
+                job?.link ? `<a href="${job.link}">${job.title}</a>` : job.title
+              }
+            </h4>
+            ${
+              job?.description
+                ? `<p class="description italic text-gray mb-8">${job.description}</p>`
+                : ""
+            }
+            <ul class="points">
+              ${job?.points
+                ?.map((point) => `<li class="point keep-all">${point}</li>`)
+                .join("")}
+            </ul>
+          </section>
+        `;
+      }
+    </script>
+  </body>
+</html>
