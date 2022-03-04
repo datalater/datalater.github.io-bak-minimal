@@ -57,9 +57,25 @@ npm i -D @testing-library/react @testing-library/user-event @testing-library/dom
 jest --init
 ```
 
-> 위 명령어를 실행하는 대신 아래 설정 파일을 그대로 복사해서 사용해도 된다.
+> 위 명령어를 실행하는 대신 아래 `jest.config.js` 파일을 그대로 복사해서 사용해도 된다.
 
 ## 📜 설정 파일
+
+### babel.config.js
+
+<!-- prettier-ignore-start -->
+```js
+module.exports = {
+  presets: [
+    ["@babel/preset-env", { targets: { node: "current" } }],
+    "@babel/preset-typescript",
+  ],
+};
+```
+{: file="babel.config.js" }
+<!-- prettier-ignore-end -->
+
+### jest.config.js
 
 <!-- prettier-ignore-start -->
 ```js
@@ -81,6 +97,8 @@ module.exports = {
 경로 별칭을 사용할 경우 아래와 같이 개별 파일로 분리하여 관리할 수 있다:
 
 > webpack의 alias나 tsconfig의 alias 모두 아래와 같이 한 파일에서 관리하면 편하다.
+
+### pathAlias.js
 
 <!-- prettier-ignore-start -->
 ```js
@@ -104,6 +122,8 @@ module.exports = {
 {: file="pathAlias.js" }
 <!-- prettier-ignore-end -->
 
+### package.json
+
 <!-- prettier-ignore-start -->
 ```json
 {
@@ -115,6 +135,8 @@ module.exports = {
 ```
 {: file="package.json" }
 <!-- prettier-ignore-end -->
+
+### tsconfig.json
 
 <!-- prettier-ignore-start -->
 ```json
@@ -144,6 +166,8 @@ module.exports = {
 ```
 {: file="tsconfig.json" }
 <!-- prettier-ignore-end -->
+
+### .eslintrc.js
 
 <!-- prettier-ignore-start -->
 ```js
