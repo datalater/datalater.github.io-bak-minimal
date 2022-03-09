@@ -531,6 +531,11 @@ footer {
   dl > dd {
     margin-left: 1rem;
   }
+
+  details {
+    font-size: 0.98rem;
+    margin: 1rem 0 1rem;
+  }
 } // .post-content
 
 .tag:hover {
