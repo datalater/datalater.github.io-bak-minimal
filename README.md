@@ -6,19 +6,32 @@
 
 ```markdown
 ---
-title: emotion theme 타입 지정하는 방법
-date: 2021-12-04
+title: 프로그래머스 - 메뉴 리뉴얼 (JavaScript)
+date: 2022-03-14
 categories: [TIL]
-tags: [typescript] # TAG names should always be lowercase
+tags: [알고리즘] # TAG names should always be lowercase
 image:
-  src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566913457/noticon/eh4d0dnic4n1neth3fui.png
+  src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1577524878/noticon/gzl7ru4i4vv3phyv34y3.png
   width: 100 # in pixels
   height: 100 # in pixels
-  alt: TypeScript
+  alt: Algorithm
+mermaid: true
+published: true
+excerpt_separator: <!--end-of-description-->
 ---
+
+## 💁 설명
+
+[프로그래머스 메뉴 리뉴얼](https://programmers.co.kr/learn/courses/30/lessons/72411) 풀이를 설명합니다.
+
+<!--end-of-description-->
 ```
 
 이미지는 [noticon](https://noticon.tammolo.com/)에서 검색하여 사용한다.
+
+### SEO 성능을 높이기 위해 원하는 내용을 meta 태그에 description 넣는 방법
+
+`excerpt_separator` 변수를 사용하여 원하는 내용까지 `<meta name="description" content="💁 설명 프로그래머스 메뉴 리뉴얼 풀이를 설명합니다.">`에 포함되도록 한다.
 
 ### 목차 자동 생성을 위한 헤더 작성법
 
