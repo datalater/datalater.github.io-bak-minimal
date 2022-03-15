@@ -1,7 +1,7 @@
 ---
 title: 프로그래머스 - 메뉴 리뉴얼 (JavaScript)
 date: 2022-03-14
-categories: [TIL]
+categories: [TIL, Algorithm]
 tags: [알고리즘] # TAG names should always be lowercase
 image:
   src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1577524878/noticon/gzl7ru4i4vv3phyv34y3.png
