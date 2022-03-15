@@ -64,6 +64,9 @@ jobs:
 - 린트를 실행한다
 - 테스트를 실행한다
 
+{% raw %}
+
+<!-- prettier-ignore-start -->
 ```yml
 name: Lint and test Devnity FE
 
@@ -114,8 +117,10 @@ jobs:
       - name: Test
         run: yarn test
 ```
-
 {: file=".github/workflows/ci.yml" }
+<!-- prettier-ignore-end -->
+
+{% endraw %}
 
 이때 린트에서 에러가 발생하거나 테스트가 실패할 경우 해당 브랜치는 머지할 수 없게 막을 수 있다. 관련 설정은 [이 글]({% post_url 2021-12-12-github-required-status-check %})을 참조한다.
 

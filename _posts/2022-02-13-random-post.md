@@ -82,6 +82,8 @@ order: 5
 </script>
 ```
 
+{% raw %}
+
 <details markdown="1">
 <summary><strong>sidebar.html 코드 전문</strong></summary>
 
@@ -212,13 +214,15 @@ order: 5
 
 </details>
 
+{% endraw %}
+
 ---
+
+## 레이아웃 추가하기
 
 > ⚠️ DEPREATED
 >
-> 위 내용이 추가됨에 따라 아래 방식은 더 이상 사용되고 있지 않습니다.
-
-## 레이아웃 추가하기
+> 위 내용이 추가됨에 따라 이 방식은 더 이상 사용되고 있지 않습니다.
 
 `random.md` 파일에 레이아웃을 적용하기 위해 `_layouts` 디렉토리에 `/random.html` 파일을 추가합니다.
 

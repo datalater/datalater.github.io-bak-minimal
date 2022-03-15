@@ -24,10 +24,10 @@ graph LR
 
 어떻게 하면 작동하는 깔끔한 코드(clean code that works)를 얻을 수 있을까요? 켄트 벡(Kent Beck)은 자동화된 테스트로 개발을 이끌어 가는 테스트 주도 개발(TDD, Test Driven Development)을 제안합니다. 과연 TDD를 하면 작동하는 깔끔한 코드를 얻을 수 있는지, 어떤 이유로 그러한지 궁금하네요. 책 [테스트 주도 개발(Test Driven Development: By Example)](http://www.yes24.com/Product/Goods/12246033)을 읽고 실습한 내용을 정리합니다.
 
+<!--end-of-description-->
+
 - [실습 코드](https://github.com/datalater/tdd-example-currency/)
 - [회고]({% post_url 2022-02-11-retro-tdd-currency-1 %})
-
-<!--end-of-description-->
 
 ### TDD 시작하기
 

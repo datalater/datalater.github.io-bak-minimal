@@ -15,9 +15,9 @@ excerpt_separator: <!--end-of-description-->
 
 Github 저장소에 브랜치 보호 규칙을 추가하여 CI를 통과하지 못한 PR은 머지할 수 없도록 설정한다.
 
-> 예제 CI는 Github Actions를 사용한다 - [참고]({% post_url 2021-12-07-github-actions-yarn %})
-
 <!--end-of-description-->
+
+> 예제 CI는 Github Actions를 사용한다 - [참고]({% post_url 2021-12-07-github-actions-yarn %})
 
 ## 브랜치 보호 규칙
 
