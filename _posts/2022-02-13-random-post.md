@@ -10,6 +10,7 @@ image:
   alt: Jekyll
 mermaid: true
 published: true
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 💁 설명
@@ -17,6 +18,8 @@ published: true
 블로그 글이 추가되면서 틈틈이 지난 글을 되돌아보고 퇴고하는 일이 잦아졌습니다. 그런데 직접 글을 특정해서 찾아가기보다는 랜덤으로 제시해주면 여러 가지 글을 골고루 볼 수 있을 것 같은 생각이 들었습니다.
 
 지킬 블로그에 랜덤 포스트 보기 기능을 추가하면서 어떻게 개발했는지 정리합니다.
+
+<!--end-of-description-->
 
 <details>
 <summary><strong>TL;DR</strong></summary>
@@ -40,6 +43,180 @@ order: 5
 ````
 {: file="_tabs/random.md" }
 <!-- prettier-ignore-end -->
+
+## 사이드바에서 랜덤 메뉴에 대한 클릭 이벤트 핸들러 등록
+
+> ⚠️ Update
+>
+> - 2022.3.15
+
+`_includes/sidebar.html`에 다음 코드를 추가합니다:
+
+```html
+<!-- ...중략... -->
+
+<!-- random post -->
+<script type="text/javascript">
+  const random = document.querySelector("[href*='/random']");
+
+  if (random) {
+    random.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      fetch("/archives")
+        .then((response) => response.text())
+        .then((htmlText) => {
+          const parser = new DOMParser();
+          const document = parser.parseFromString(htmlText, "text/html");
+
+          const posts = document.querySelectorAll("#archives [href*=posts]");
+          const links = Array.from(posts).map((post) => post.href);
+
+          const randomIndex = Math.floor(Math.random() * links.length);
+          const randomLink = links[randomIndex];
+
+          window.location = randomLink;
+        });
+    });
+  }
+</script>
+```
+
+<details markdown="1">
+<summary><strong>sidebar.html 코드 전문</strong></summary>
+
+```html
+<!--
+  The Side Bar
+-->
+
+<div id="sidebar" class="d-flex flex-column align-items-end" lang="{{lang}}">
+  <div class="profile-wrapper text-center">
+    <div id="avatar">
+      <a href="{{ '/' | relative_url }}" alt="avatar" class="mx-auto">
+        {% if site.avatar != '' and site.avatar %}
+          {% capture avatar_url %}
+            {%- if site.avatar contains '://' -%}
+              {{ site.avatar }}
+            {%- elsif site.img_cdn != '' and site.img_cdn -%}
+              {{ site.avatar | prepend: site.img_cdn }}
+            {%- else -%}
+              {{ site.avatar | relative_url }}
+            {%- endif -%}
+          {% endcapture %}
+          <img src="{{ avatar_url }}" alt="avatar" onerror="this.style.display='none'">
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="site-title mt-3">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+    <div class="site-subtitle font-italic">{{ site.tagline }}</div>
+
+  </div><!-- .profile-wrapper -->
+
+  <ul class="w-100">
+
+    <!-- home -->
+    <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>{{ site.data.locales[lang].tabs.home | upcase }}</span>
+      </a>
+    </li>
+    <!-- the real tabs -->
+    {% for tab in site.tabs %}
+    <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+      <a href="{{ tab.url | relative_url }}" class="nav-link">
+        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+        {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+
+        <span>{{ site.data.locales[lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+      </a>
+    </li> <!-- .nav-item -->
+    {% endfor %}
+
+  </ul> <!-- ul.nav.flex-column -->
+
+  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+
+    {% for entry in site.data.contact %}
+      {% capture url %}
+        {%- if entry.type == 'github' -%}
+          https://github.com/{{ site.github.username }}
+        {%- elsif entry.type == 'twitter' -%}
+          https://twitter.com/{{ site.twitter.username }}
+        {%- elsif entry.type == 'email' -%}
+          {% assign email = site.social.email | split: '@' %}
+          javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+        {%- elsif entry.type == 'rss' -%}
+          {{ "/feed.xml" | relative_url }}
+        {%- else -%}
+          {{ entry.url }}
+        {%- endif -%}
+      {% endcapture %}
+
+      {% if url %}
+      <a href="{{ url }}" aria-label="{{ entry.type }}"
+        {% unless site.theme_mode %}class="order-{{ forloop.index | plus: 2 }}"{% endunless %}
+        {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
+        <i class="{{ entry.icon }}"></i>
+      </a>
+      {% endif %}
+
+    {% endfor %}
+
+    {% unless site.theme_mode %}
+      {% if site.data.contact.size > 0 %}
+        <span class="icon-border order-2"></span>
+      {% endif %}
+
+      <span id="mode-toggle-wrapper" class="order-1">
+        {% include mode-toggle.html %}
+      </span>
+    {% endunless %}
+
+  </div> <!-- .sidebar-bottom -->
+
+</div><!-- #sidebar -->
+
+<!-- random post -->
+<script type="text/javascript">
+  const random = document.querySelector("[href*='/random']");
+
+  if (random) {
+    random.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      fetch("/archives")
+        .then((response) => response.text())
+        .then((htmlText) => {
+          const parser = new DOMParser();
+          const document = parser.parseFromString(htmlText, "text/html");
+
+          const posts = document.querySelectorAll("#archives [href*=posts]");
+          const links = Array.from(posts).map((post) => post.href);
+
+          const randomIndex = Math.floor(Math.random() * links.length);
+          const randomLink = links[randomIndex];
+
+          window.location = randomLink;
+        })
+    })
+  }
+
+</script>
+
+```
+
+</details>
+
+---
+
+> ⚠️ DEPREATED
+>
+> 위 내용이 추가됨에 따라 아래 방식은 더 이상 사용되고 있지 않습니다.
 
 ## 레이아웃 추가하기
 

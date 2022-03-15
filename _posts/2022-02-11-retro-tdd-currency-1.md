@@ -10,11 +10,14 @@ image:
   alt: TDD
 mermaid: true
 published: true
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 💁 설명
 
 [화폐 예제 실습으로 TDD의 리듬 느껴보기](/tags/tdd-by-example/)를 하면서 느낀 점을 회고합니다.
+
+<!--end-of-description-->
 
 ## 📝 회고
 

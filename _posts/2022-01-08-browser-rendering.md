@@ -9,11 +9,14 @@ image:
   height: 100 # in pixels
   alt: Chrome
 mermaid: true
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 목표
 
 브라우저가 웹 페이지를 어떻게 그리는지 설명하고, 그에 따라 어떻게 해야 브라우저 렌더링을 최적화할 수 있는지 정리합니다.
+
+<!--end-of-description-->
 
 ## 브라우저 구조
 

@@ -10,6 +10,7 @@ image:
   alt: TypeScript
 mermaid: true
 published: false
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## status

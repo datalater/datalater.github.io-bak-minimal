@@ -1,8 +1,8 @@
 ---
-title: 리액트 앱을 위한 Jest 환경 세팅하기 (feat. TypeScript, React Testing Library)
+title: 리액트 앱을 위한 Jest 환경 세팅하기 (feat. Babel, TypeScript, React Testing Library)
 date: 2022-02-10
 categories: [TIL]
-tags: [jest] # TAG names should always be lowercase
+tags: [jest, 환경설정, 리액트] # TAG names should always be lowercase
 image:
   src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566919905/noticon/c5qc9a9sytsnqmi4ixjz.png
   width: 100 # in pixels
@@ -10,11 +10,14 @@ image:
   alt: Jest
 mermaid: true
 published: true
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 💁 설명
 
 타입스크립트로 리액트 앱을 개발할 때 테스트 코드를 작성할 수 있도록 Jest 환경을 세팅하는 방법을 정리합니다.
+
+<!--end-of-description-->
 
 <details>
 <summary><strong>참고: <code class="language-plaintext highlighter-rouge">babel-jest</code>를 사용하는 이유</strong></summary>

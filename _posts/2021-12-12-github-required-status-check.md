@@ -8,6 +8,7 @@ image:
   width: 100 # in pixels
   height: 100 # in pixels
   alt: Github Actions
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 목표
@@ -16,6 +17,7 @@ Github 저장소에 브랜치 보호 규칙을 추가하여 CI를 통과하지 �
 
 > 예제 CI는 Github Actions를 사용한다 - [참고]({% post_url 2021-12-07-github-actions-yarn %})
 
+<!--end-of-description-->
 
 ## 브랜치 보호 규칙
 
@@ -49,10 +51,11 @@ jobs:
         node-version: [16.x]
 
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
-      # ...
+      - name: Check out repository
+        uses: actions/checkout@v2
+        # ...
 ```
+
 {: file=".github/workflows/on-pull-request.yml" }
 
 여기서 `jobs`의 이름에 해당하는 `build`를 검색창에 입력해야 한다. Github Actions의 `jobs` 이름이 status check의 이름으로 등록되기 때문이다.
@@ -65,7 +68,6 @@ _추가가 완료되었다_
 설정이 완료된 상태에서 PR을 업로드하면 status check로 등록한 CI가 `Required`로 표시되는 것을 확인할 수 있고, CI를 통과하지 못할 경우 머지 버튼이 비활성화된다:
 
 ![required statuses must pass](https://user-images.githubusercontent.com/8105528/145705684-fb6d7b18-d179-4322-ba25-84157bbc46ba.png){: .shadow }
-
 
 ## See also
 

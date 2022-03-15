@@ -2,18 +2,21 @@
 title: 리액트 보일러플레이트 만들기 (feat. Webpack, TypeScript, ESLint, Prettier, Storybook)
 date: 2022-01-24
 categories: [TIL]
-tags: [리액트] # TAG names should always be lowercase
+tags: [리액트, 환경설정] # TAG names should always be lowercase
 image:
   src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566557331/noticon/d5hqar2idkoefh6fjtpu.png
   width: 100 # in pixels
   height: 100 # in pixels
   alt: React
 mermaid: true
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 목표
 
 Webpack을 이용해서 React + Typescript + ESLint + Prettier + Storybook 세팅하는 방법을 정리합니다.
+
+<!--end-of-description-->
 
 완성된 코드:
 

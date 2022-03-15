@@ -8,6 +8,7 @@ image:
   width: 100 # in pixels
   height: 100 # in pixels
   alt: Github Actions
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 목표
@@ -16,6 +17,7 @@ CI/CD 플랫폼인 [Github Actions](https://docs.github.com/en/actions/learn-git
 
 > 브랜치에 푸시가 되면 자동으로 배포가 되는 정적 사이트(ex. netlify)를 이용할 예정이므로 빌드와 배포는 다루지 않는다.
 
+<!--end-of-description-->
 
 ## 워크플로우 시작하기
 
@@ -46,12 +48,12 @@ jobs:
       - uses: actions/checkout@v2 # 사용할 액션
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
       - run: npm install -g bats # 실행할 커맨드
       - run: bats -v
 ```
-{: file=".github/workflows/learn-github-actions.yml" }
 
+{: file=".github/workflows/learn-github-actions.yml" }
 
 ## 워크플로우 만들기
 
@@ -69,7 +71,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -77,45 +78,46 @@ jobs:
         node-version: [16.x] # 사용할 노드 버전을 명시한다
 
     steps:
-    # 현재 저장소로 체크아웃 한다
-    - name: Check out repository
-      uses: actions/checkout@v2
+      # 현재 저장소로 체크아웃 한다
+      - name: Check out repository
+        uses: actions/checkout@v2
 
-    # 노드를 설치한다
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+      # 노드를 설치한다
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    # yarn 캐시를 한다
-    - name: Get yarn cache directory path 
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+      # yarn 캐시를 한다
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
-    - name: Cache yarn
-      uses: actions/cache@v2
-      id: yarn-cache 
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
+      - name: Cache yarn
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-    # 프로젝트 의존성을 설치한다
-    - name: Install a project
-      run: yarn install
+      # 프로젝트 의존성을 설치한다
+      - name: Install a project
+        run: yarn install
 
-    # 린트를 실행한다
-    - name: Lint
-      run: yarn lint
+      # 린트를 실행한다
+      - name: Lint
+        run: yarn lint
 
-    # 테스트를 실행한다
-    - name: Test
-      run: yarn test
+      # 테스트를 실행한다
+      - name: Test
+        run: yarn test
 ```
+
 {: file=".github/workflows/ci.yml" }
 
-이때 린트에서 에러가 발생하거나 테스트가 실패할 경우 해당 브랜치는 머지할 수 없게 막을 수 있다. 관련 설정은 [이 글]({% post_url 2021-12-12-github-required-status-check %})을 참조한다. 
+이때 린트에서 에러가 발생하거나 테스트가 실패할 경우 해당 브랜치는 머지할 수 없게 막을 수 있다. 관련 설정은 [이 글]({% post_url 2021-12-12-github-required-status-check %})을 참조한다.
 
 ![required statuses must pass](https://user-images.githubusercontent.com/8105528/145705684-fb6d7b18-d179-4322-ba25-84157bbc46ba.png){: .shadow }
 _Github Actions 작업이 실패할 경우 PR에서 머지를 할 수 없다는 경고 메시지가 뜬다. "안 돼. 머지시킬 생각 없어. 돌아가."_

@@ -10,11 +10,14 @@ image:
   alt: JavaScript
 mermaid: true
 published: true
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 💁 설명
 
 바닐라JS를 이용하여 선언형 컴포넌트를 만듭니다.
+
+<!--end-of-description-->
 
 ## 공통 준비사항
 

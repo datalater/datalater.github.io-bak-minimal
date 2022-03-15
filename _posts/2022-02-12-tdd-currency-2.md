@@ -10,6 +10,7 @@ image:
   alt: TDD
 mermaid: true
 published: true
+excerpt_separator: <!--end-of-description-->
 ---
 
 ## 💁 프롤로그
@@ -25,6 +26,8 @@ graph LR
 
 - [실습 코드](https://github.com/datalater/tdd-example-currency/)
 - [회고]({% post_url 2022-02-11-retro-tdd-currency-1 %})
+
+<!--end-of-description-->
 
 ### TDD 시작하기
 

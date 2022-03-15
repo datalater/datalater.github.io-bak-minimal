@@ -1,14 +1,21 @@
 ---
 title: emotion ThemeProvider의 theme 타입 지정하는 방법 (feat. 자동완성)
 date: 2021-12-04
-categories: [TIL]
+categories: [TIL, Troubleshooting]
 tags: [타입스크립트, emotion] # TAG names should always be lowercase
 image:
   src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566913457/noticon/eh4d0dnic4n1neth3fui.png
   width: 100 # in pixels
   height: 100 # in pixels
   alt: TypeScript
+excerpt_separator: <!--end-of-description-->
 ---
+
+## 💁 설명
+
+emotion의 `ThemeProvider`를 사용할 때 커스텀으로 추가한 `theme`을 사용하려고 하면 타입 오류가 발생합니다. 어떻게 해결했는지 트러블슈팅 과정을 정리합니다.
+
+<!--end-of-description-->
 
 ## 문제 상황
 
@@ -38,6 +45,9 @@ export default theme;
 import theme from "./assets/theme";
 
 // Component B
+import theme from "./assets/theme";
+
+// Component C
 import theme from "./assets/theme";
 
 // ...
