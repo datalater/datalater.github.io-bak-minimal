@@ -87,11 +87,11 @@ export default App;
 ![error](https://user-images.githubusercontent.com/8105528/144692954-51399743-dc54-4f3f-b79f-5032cf451a3f.png){: .shadow }
 _theme에서 타입 오류가 발생한다_
 
-`emotion`이 제공하는 `ThemeProvider` 컴포넌트의 `theme` prop은 패키지 내부적으로 타입이 정의되어 있으니 살펴보겠습니다.
+라이브러리에서 타입을 어떻게 정의해두었길래 오류가 나는 걸까요? `emotion` 라이브러리 코드를 직접 열어서 `ThemeProvider` 컴포넌트의 `theme` prop이 어떤 타입인지 살펴보겠습니다.
 
 <!-- prettier-ignore-start -->
 
-> [emotion-js/emotion](https://github.com/emotion-js/emotion/blob/main/packages/react/types/theming.d.ts#L9)
+> [emotion-js/emotion - theming.d.ts#L9](https://github.com/emotion-js/emotion/blob/main/packages/react/types/theming.d.ts#L9)
 
 ```ts
 // @emotion/react/types/theming.d.ts
@@ -106,7 +106,7 @@ export interface Theme {}
 {: file="@emotion/react/types/theming.d.ts" }
 <!-- prettier-ignore-end -->
 
-`Theme` 인터페이스 내부가 비어 있네요. 즉, `props.theme`은 프로퍼티가 비어 있는 타입인데, (제가 임의로 정의한) `colors` 프로퍼티로 접근하려고 하니 타입 오류가 발생한 것입니다.
+`ThemeProviderProps` 인터페이스에 `theme`의 타입은 `<Theme>`입니다. 그런데 `Theme` 인터페이스 내부가 비어 있네요. 즉, `<ThemeProvider theme={theme} />`을 사용했을 때 `props.theme`은 프로퍼티가 비어 있는 타입인데, (제가 임의로 정의한) `colors` 프로퍼티로 접근하려고 하니 타입 오류가 발생한 것입니다.
 
 ## 해결 방법
 
@@ -148,7 +148,7 @@ declare module "@emotion/react" {
 {: file="types/emotion.d.ts" }
 <!-- prettier-ignore-end -->
 
-참고로 객체 `theme`에 `as const`로 타입 단언(const assertion)을 해주면, 해당 객체 내부 값의 타입을 리터럴 타입으로 추론합니다. 타입 단언을 하든 안 하든 IDE에서 `props.theme`에 어떤 프로퍼티가 있는지 자동완성을 잘 해줍니다. 다만 타입 단언을 하지 않으면 객체 내부의 값은 얼마든지 바뀔 수 있기 때문에 `string`으로 추론하여 프로퍼티 이름만 자동완성을 지원해주지만, 타입 단언을 할 경우 객체 내부의 값이 리터럴 타입으로 변경되어 프로퍼티의 값(색상 값)까지 자동완성을 해줍니다.
+> 참고로 `assets/theme` 파일에서 객체 `theme`에 `as const`로 타입 단언(const assertion)을 해주면, 해당 객체 내부 값의 타입을 리터럴 타입으로 추론합니다. 타입 단언을 하든 안 하든 IDE에서 `props.theme`에 어떤 프로퍼티가 있는지 자동완성을 잘 해줍니다. 다만 타입 단언을 하지 않으면 객체 내부의 값은 얼마든지 바뀔 수 있기 때문에 `string`으로 추론하여 프로퍼티 이름만 자동완성을 지원해주지만, 타입 단언을 할 경우 객체 내부의 값이 리터럴 타입으로 변경되어 프로퍼티의 값(색상 값)까지 자동완성을 해줍니다.
 
 ## 결과
 
