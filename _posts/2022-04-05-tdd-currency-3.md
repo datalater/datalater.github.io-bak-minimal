@@ -1,7 +1,7 @@
 ---
 title: 화폐 예제 실습으로 TDD의 리듬 느껴보기 - 3. 모두를 위한 평등
 date: 2022-04-05
-categories: [TIL]
+categories: [TIL, TDD]
 tags: [tdd, tdd-by-example, value-object] # TAG names should always be lowercase
 image:
   src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1574740301/noticon/up950fjgyekwqizq6xa6.png
@@ -133,6 +133,12 @@ graph LR
 ---
 
 ## 🎬 3장 타락한 객체 [^3]
+
+> 🚀 **TL;DR**
+>
+> - 디자인 패턴(값 객체)이 하나의 또 다른 오퍼레이션(값 동치성)을 암시한다.
+> - 설계를 어떻게 해야 할지, 프로그램이 어떻게 변화할지 감이 잡히지 않을 때는 삼각측량을 사용하면 다른 방향으로 생각해볼 기회를 준다.
+> - 삼각측량을 사용하려면 이미 존재하는 테스트 케이스에 추가적으로 일반적인 해를 필요로 하는 테스트 케이스를 추가하면 된다.
 
 ### 지난 할일 목록
 
@@ -332,7 +338,7 @@ class Dollar {
 ## 📚 함께 읽기
 
 - [테스트 주도 개발](http://www.yes24.com/Product/Goods/12246033)
-- [실습 코드](https://github.com/datalater/tdd-example-currency/)
+- [실습 코드 - 3장 모두를 위한 평등](https://github.com/datalater/tdd-by-example-currency/blob/3%EC%9E%A5-%EB%AA%A8%EB%91%90%EB%A5%BC%EC%9C%84%ED%95%9C%ED%8F%89%EB%93%B1/app.test.ts)
 - [회고]({% post_url 2022-02-11-retro-tdd-currency-1 %})
 
 ## 🔖 주석

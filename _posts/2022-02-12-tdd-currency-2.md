@@ -1,7 +1,7 @@
 ---
 title: 화폐 예제 실습으로 TDD의 리듬 느껴보기 - 2. 타락한 객체
 date: 2022-02-12
-categories: [TIL]
+categories: [TIL, TDD]
 tags: [tdd, tdd-by-example] # TAG names should always be lowercase
 image:
   src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1574740301/noticon/up950fjgyekwqizq6xa6.png
