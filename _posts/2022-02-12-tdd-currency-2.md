@@ -29,7 +29,8 @@ graph LR
 - [실습 코드](https://github.com/datalater/tdd-example-currency/)
 - [회고]({% post_url 2022-02-11-retro-tdd-currency-1 %})
 
-### TDD 시작하기
+<details markdown="1">
+<summary><strong>TDD 시작하기</strong></summary>
 
 TDD는 두 가지 규칙을 따릅니다:
 
@@ -53,7 +54,10 @@ graph LR
 
 > 리팩토링(Refactoring)이란 코드의 외적 행위는 그대로 유지하면서 내부 구조를 변경하는 작업을 뜻한다.
 
-### 화폐 예제의 목표
+</details>
+
+<details markdown="1">
+<summary><strong>화폐 예제의 목표</strong></summary>
 
 화폐 예제를 실습하면서 가져야 할 목표는 TDD의 리듬을 느껴보는 것입니다.
 
@@ -74,7 +78,10 @@ graph LR
 
 > 이 예제를 통해 여러분은 코딩하기 전에 먼저 테스트를 만드는 법과 설계를 유기적으로 키워나가는(grow) 방법을 배우게 될 것이다. [^2]
 
-### 화폐 예제 요구사항
+</details>
+
+<details markdown="1">
+<summary><strong>화폐 예제 요구사항</strong></summary>
 
 `AS-IS`에서 `TO-BE`로 변경하는 것이 화폐 예제의 요구사항입니다.
 
@@ -101,7 +108,10 @@ graph LR
 | :--: | ---: | ---: |
 | CHF  |  USD |  1.5 |
 
-### 할일 목록 읽는 법
+</details>
+
+<details markdown="1">
+<summary><strong>할일 목록 읽는 법</strong></summary>
 
 <!-- prettier-ignore-start -->
 ```diff
@@ -117,6 +127,8 @@ graph LR
 - 일반: 작업해야 할 항목
 - 빨강: 현재 작업을 시작한 항목
 - 초록: 작업을 끝낸 항목
+
+</details>
 
 ---
 
