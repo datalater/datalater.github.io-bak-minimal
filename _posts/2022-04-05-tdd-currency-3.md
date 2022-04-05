@@ -2,7 +2,7 @@
 title: 화폐 예제 실습으로 TDD의 리듬 느껴보기 - 3. 모두를 위한 평등
 date: 2022-04-05
 categories: [TIL, TDD]
-tags: [tdd, tdd-by-example, value-object] # TAG names should always be lowercase
+tags: [tdd, tdd-by-example, 값객체패턴] # TAG names should always be lowercase
 image:
   src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1574740301/noticon/up950fjgyekwqizq6xa6.png
   width: 100 # in pixels
