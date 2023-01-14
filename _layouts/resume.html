@@ -27,17 +27,17 @@ layout: compress
               <h2 class="role bold mb-6">Frontend Developer</h2>
               <p class="contact size-13 mb-4-exception">
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:the7mincheol@gmail.com"
+                <a target='_blank' href="mailto:the7mincheol@gmail.com"
                   >the7mincheol@gmail.com</a
                 >
               </p>
               <p class="contact size-13 mb-4-exception">
                 <i class="fab fa-github"></i>
-                <a href="https://github.com/datalater">datalater</a>
+                <a target='_blank' href="https://github.com/datalater">datalater</a>
               </p>
               <p class="contact size-13 mb-4-exception">
                 <i class="fas fa-rss"></i>
-                <a href="https://datalater.github.io">datalater.github.io</a>
+                <a target='_blank' href="https://datalater.github.io">datalater.github.io</a>
               </p>
             </div>
           </div>
@@ -172,7 +172,7 @@ layout: compress
               description:
                 "주택, 상가, 토지 등 약 5천만 건 이상의 전국 부동산의 세금 계산 및 평가 금액 보고서 제공 서비스",
               points: [
-                "<a href='https://biz.chosun.com/site/data/html_dir/2020/09/23/2020092301294.html'>아파트 실거래가 로봇 기사</a> API 개발",
+                "<a target='_blank' href='https://biz.chosun.com/site/data/html_dir/2020/09/23/2020092301294.html'>아파트 실거래가 로봇 기사</a> API 개발",
                 "공공데이터를 사용하여 전국 부동산 DB 구축 및 관리",
                 "부동산 검색 시스템 및 세금 백엔드 API 개발",
                 "PDF와 구글 시트로 만들어주는 부동산 평가 보고서 생성 API 개발",
@@ -366,7 +366,7 @@ layout: compress
               points: [
                 "Container/Presenter 패턴을 사용하여 상태 관리 로직과 UI 로직을 분리하여 컴포넌트 개발",
                 "테스트 코드를 먼저 작성하여 자동화된 테스트로 개발을 이끌어나가는 TDD 수행",
-                "<a href='https://github.com/datalater/project-react-3-datalater#test-coverage'>테스트 커버리지 100%</a> 달성",
+                "<a target='_blank' href='https://github.com/datalater/project-react-3-datalater#test-coverage'>테스트 커버리지 100%</a> 달성",
               ],
             },
           ],
@@ -415,12 +415,12 @@ layout: compress
                   ${opensource?.title}
                   ${
                     opensource?.productUrl
-                      ? `<a class="size-13" href="${opensource?.productUrl}"><i class="fas fa-link" title="product"></i></a>`
+                      ? `<a target='_blank' class="size-13" href="${opensource?.productUrl}"><i class="fas fa-link" title="product"></i></a>`
                       : ""
                   }
                   ${
                     opensource?.githubUrl
-                      ? `<a class="size-13" href="${opensource?.githubUrl}"><i class="fab fa-github" title="github"></i></a>`
+                      ? `<a target='_blank' class="size-13" href="${opensource?.githubUrl}"><i class="fab fa-github" title="github"></i></a>`
                       : ""
                   }</h3>
                 </div>
@@ -534,12 +534,12 @@ layout: compress
                   ${experience?.title}
                   ${
                     experience?.productUrl
-                      ? `<a class="size-13" href="${experience?.productUrl}"><i class="fas fa-link" title="product"></i></a>`
+                      ? `<a target='_blank' class="size-13" href="${experience?.productUrl}"><i class="fas fa-link" title="product"></i></a>`
                       : ""
                   }
                   ${
                     experience?.githubUrl
-                      ? `<a class="size-13" href="${experience?.githubUrl}"><i class="fab fa-github" title="github"></i></a>`
+                      ? `<a target='_blank' class="size-13" href="${experience?.githubUrl}"><i class="fab fa-github" title="github"></i></a>`
                       : ""
                   }
                 </h3>
@@ -572,7 +572,7 @@ layout: compress
           <section class="job mb-16">
             <h4 class="title bold uppercase mb-8">
               ${
-                job?.link ? `<a href="${job.link}">${job.title}</a>` : job.title
+                job?.link ? `<a target='_blank' href="${job.link}">${job.title}</a>` : job.title
               }
             </h4>
             ${
